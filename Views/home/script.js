@@ -31,7 +31,7 @@ function getLibros() {
     if (request.readyState == 4 && request.status == 200) {
       var objData = JSON.parse(request.responseText);
       if (objData.status) {
-        console.log(objData["data"].length);
+        // console.log(objData["data"].length);
 
         books = "";
         book8 = "";
@@ -60,9 +60,12 @@ function getLibros() {
           if (i >= 12 && i < 16) {
             book = '<div class="book bg-four">' + book;
           }
-          book8 = book8 + book;
+          if (i >= 16) {
+            book = '<div class="book bg-five">' + book;
+          }
 
-          if (i == 7 || i == 15) {
+          book8 = book8 + book;
+          if (i == 7 || i == 15 || i == 23) {
             book8 = '<div class="row">' + book8 + "</div>";
             books = books + book8;
             book8 = "";

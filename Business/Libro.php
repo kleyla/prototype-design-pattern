@@ -6,7 +6,6 @@ class Libro extends PublicacionPrototype
 
     public function __construct($titulo, $autor, $editorial)
     {
-        // echo "DEsde Libro";
         $this->tipo = "Libro";
         parent::__construct($titulo, $autor, $editorial);
     }

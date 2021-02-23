@@ -113,8 +113,8 @@ p {
   color: white;
 }
 .book {
-  width: 150px;
-  height: 200px;
+  width: 170px;
+  height: 220px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -156,6 +156,15 @@ p {
   box-sizing: border-box;
 }
 
+.bg-five {
+  background-color: var(--six);
+}
+.bg-five .book-border {
+  border: 10px solid var(--six);
+  box-shadow: inset 0px 0px 0px 2px white;
+  box-sizing: border-box;
+}
+
 .book-back-border {
   border: 10px solid var(--dark);
   box-shadow: inset 0px 0px 0px 2px white;
@@ -172,7 +181,7 @@ p {
   padding: 14px;
 }
 .book-cover h4 {
-  font-size: 30px;
+  font-size: 28px;
   text-align: center;
 }
 .book-back {

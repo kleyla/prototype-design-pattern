@@ -1,7 +1,7 @@
 <?php
 require_once("Business/PublicacionPrototype.php");
 
-class Revisa extends PublicacionPrototype
+class Revista extends PublicacionPrototype
 {
 
     public function __construct($titulo, $autor, $editorial)

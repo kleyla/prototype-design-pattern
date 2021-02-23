@@ -1,5 +1,6 @@
 <?php
 require_once("Business/Libro.php");
+require_once("Business/Revista.php");
 
 class Biblioteca extends Business
 {
@@ -26,6 +27,9 @@ class Biblioteca extends Business
 
         $datos = $this->getDatosWilliamShakespeare();
         $this->getLibros($datos);
+
+        $datos = $this->getDatosRevistas();
+        $this->getRevistas($datos);
 
         $arrResponse = array('status' => true, 'data' => $this->publicaciones);
         echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
@@ -79,9 +83,29 @@ class Biblioteca extends Business
             array("titulo" => "Aquellos hombrecitos", "autor" => "Louisa May Alcott", "editorial" => "Roberts Brothers"),
         ];
     }
-    public function getRevistas()
+    public function getRevistas($datos)
     {
-        # code...
+        $revista = new Revista($datos[0]["titulo"], $datos[0]["autor"], $datos[0]["editorial"]);
+        array_push($this->publicaciones, $revista);
+
+        for ($i = 1; $i < count($datos); $i++) {
+            $revistaClonada = $revista->clonar();
+            $revistaClonada->setTitulo($datos[$i]["titulo"]);
+            array_push($this->publicaciones, $revistaClonada);
+        }
+    }
+    public function getDatosRevistas()
+    {
+        return [
+            array("titulo" => "Investigacion y Ciencia", "autor" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 01-20"),
+            array("titulo" => "Investigacion y Ciencia", "autor" => "Hidalgo, Bruner, D'Andrea", "editorial" => "ENI 03-20"),
+            array("titulo" => "Investigacion y Ciencia", "autor" => "D'Andrea, Mendoza, Soliveres", "editorial" => "ENI 05-20"),
+            array("titulo" => "Investigacion y Ciencia", "autor" => "Soliveres, Bruner, Garcia", "editorial" => "ENI 06-20"),
+            array("titulo" => "Investigacion y Ciencia", "autor" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 08-20"),
+            array("titulo" => "Investigacion y Ciencia", "autor" => "Hidalgo, Bruner, D'Andrea", "editorial" => "ENI 09-20"),
+            array("titulo" => "Investigacion y Ciencia", "autor" => "D'Andrea, Mendoza, Soliveres", "editorial" => "ENI 10-20"),
+            array("titulo" => "Investigacion y Ciencia", "autor" => "Soliveres, Bruner, Garcia", "editorial" => "ENI 12-20"),
+        ];
     }
 
     public function exa2()

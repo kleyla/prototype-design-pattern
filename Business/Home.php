@@ -11,8 +11,8 @@ class Home extends Business
     public function home()
     {
         $data["pattern"] = "My books";
-        $data["script"] = "home/script1.js";
-        $this->getView("home/index1", $data);
+        $data["script"] = "exa/script.js";
+        $this->getView("exa/index", $data);
     }
     public function getBooks()
     {
