@@ -4,13 +4,13 @@ abstract class PublicacionPrototype
 {
     public $titulo;
     public $tipo; // Libro o revista
-    public $autor;
+    // public $autor;
     public $editorial;
 
-    public function __construct($titulo, $autor, $editorial)
+    public function __construct($titulo, $editorial)
     {
         $this->titulo = $titulo;
-        $this->autor = $autor;
+        // $this->autor = $autor;
         $this->editorial = $editorial;
     }
 
@@ -21,10 +21,6 @@ abstract class PublicacionPrototype
     {
         $this->titulo = $titulo;
     }
-    public function setAutor($autor)
-    {
-        $this->autor = $autor;
-    }
     public function setEditorial($editorial)
     {
         $this->editorial = $editorial;
@@ -34,10 +30,7 @@ abstract class PublicacionPrototype
     {
         return $this->titulo;
     }
-    public function getAutor()
-    {
-        return $this->autor;
-    }
+
     public function getEditorial()
     {
         return $this->editorial;

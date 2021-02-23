@@ -3,13 +3,25 @@ require_once("Business/PublicacionPrototype.php");
 
 class Libro extends PublicacionPrototype
 {
+    public $autor;
 
     public function __construct($titulo, $autor, $editorial)
     {
         $this->tipo = "Libro";
-        parent::__construct($titulo, $autor, $editorial);
+        $this->autor = $autor;
+
+        parent::__construct($titulo, $editorial);
     }
 
+    public function setAutor($autor)
+    {
+        $this->autor = $autor;
+    }
+    public function getAutor()
+    {
+        return $this->autor;
+    }
+    
     public function clonarPHP()
     {
         return clone $this;

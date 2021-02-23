@@ -180,7 +180,7 @@ p {
   align-items: center;
   padding: 14px;
 }
-.book-cover h4 {
+.book-cover {
   font-size: 28px;
   text-align: center;
 }
@@ -203,4 +203,9 @@ p {
 }
 .book:hover .book-back {
   opacity: 1;
+}
+.titulo {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 30px;
 }

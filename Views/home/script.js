@@ -39,15 +39,28 @@ function getLibros() {
         for (i = 0; i < objData["data"].length; i++) {
           //   console.log(objData["data"][i]["titulo"]);
 
-          book = `<div class="book-cover book-border">
-                        <h4>${objData["data"][i]["titulo"]}</h4>
+          if (objData["data"][i]["tipo"] == "Revista") {
+            book = `<div class="book-cover book-border">
+                        <h4 class="titulo">${objData["data"][i]["titulo"]}</h4>
+                        <h4>${objData["data"][i]["tema"]}</h4>
                     </div>
 
                     <div class="book-back book-back-border">
-                        <p><b>Autor: </b>${objData["data"][i]["autor"]}</p>
+                        <p><b>Autores: </b>${objData["data"][i]["autores"]}</p>
                         <p><b>Editorial: </b>${objData["data"][i]["editorial"]}</p>
                     </div>
                 </div>`;
+          } else {
+            book = `<div class="book-cover book-border">
+                          <h4>${objData["data"][i]["titulo"]}</h4>
+                      </div>
+  
+                      <div class="book-back book-back-border">
+                          <p><b>Autor: </b>${objData["data"][i]["autor"]}</p>
+                          <p><b>Editorial: </b>${objData["data"][i]["editorial"]}</p>
+                      </div>
+                  </div>`;
+          }
           if (i >= 0 && i < 4) {
             book = '<div class="book bg-one">' + book;
           }

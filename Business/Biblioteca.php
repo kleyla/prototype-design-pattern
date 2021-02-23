@@ -85,40 +85,27 @@ class Biblioteca extends Business
     }
     public function getRevistas($datos)
     {
-        $revista = new Revista($datos[0]["titulo"], $datos[0]["autor"], $datos[0]["editorial"]);
+        $revista = new Revista($datos[0]["titulo"], $datos[0]["tema"], $datos[0]["autores"], $datos[0]["editorial"]);
         array_push($this->publicaciones, $revista);
 
         for ($i = 1; $i < count($datos); $i++) {
             $revistaClonada = $revista->clonar();
-            $revistaClonada->setTitulo($datos[$i]["titulo"]);
+            $revistaClonada->setTema($datos[$i]["tema"]);
+            $revistaClonada->setAutores($datos[$i]["autores"]);
             array_push($this->publicaciones, $revistaClonada);
         }
     }
     public function getDatosRevistas()
     {
         return [
-            array("titulo" => "Investigacion y Ciencia", "autor" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 01-20"),
-            array("titulo" => "Investigacion y Ciencia", "autor" => "Hidalgo, Bruner, D'Andrea", "editorial" => "ENI 03-20"),
-            array("titulo" => "Investigacion y Ciencia", "autor" => "D'Andrea, Mendoza, Soliveres", "editorial" => "ENI 05-20"),
-            array("titulo" => "Investigacion y Ciencia", "autor" => "Soliveres, Bruner, Garcia", "editorial" => "ENI 06-20"),
-            array("titulo" => "Investigacion y Ciencia", "autor" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 08-20"),
-            array("titulo" => "Investigacion y Ciencia", "autor" => "Hidalgo, Bruner, D'Andrea", "editorial" => "ENI 09-20"),
-            array("titulo" => "Investigacion y Ciencia", "autor" => "D'Andrea, Mendoza, Soliveres", "editorial" => "ENI 10-20"),
-            array("titulo" => "Investigacion y Ciencia", "autor" => "Soliveres, Bruner, Garcia", "editorial" => "ENI 12-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "El universo", "autores" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 01-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "La Inteligencia artificial", "autores" => "Hidalgo, Bruner, D'Andrea", "editorial" => "ENI 03-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "LA celula", "autores" => "D'Andrea, Mendoza, Soliveres", "editorial" => "ENI 05-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "El coranavirus", "autores" => "Soliveres, Bruner, Garcia", "editorial" => "ENI 06-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "La vacuna", "autores" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 08-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "Los nuevos soldados", "autores" => "Hidalgo, Bruner, D'Andrea", "editorial" => "ENI 09-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "Marte", "autores" => "D'Andrea, Mendoza, Soliveres", "editorial" => "ENI 10-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "Descubriendo vida", "autores" => "Soliveres, Bruner, Garcia", "editorial" => "ENI 12-20"),
         ];
-    }
-
-    public function exa2()
-    {
-        $datos = $this->getDatosJohnGreen();
-        // foreach ($datos as $libro) {
-        //     echo $libro["titulo"];
-        // }
-        echo $datos[2]["titulo"];
-    }
-    public function exa()
-    {
-        $book = new Libro("El principito", "Antoine de Saint-Exupery", "ENI");
-        echo json_encode($book->getPublicacion());
     }
 }
