@@ -14,26 +14,29 @@ class Home extends Business
         $data["script"] = "exa/script.js";
         $this->getView("exa/index", $data);
     }
-    public function getBooks()
+
+    public function mal()
     {
-        # code...
+        $book = new Libro("El principito", "Antoine de Saint-Exupery", "ENI");
+
+        $book2 = $book;
+
+        $book2->setTitulo("Tierra de hombres");
+
+        echo json_encode($book->getPublicacion());
+        echo "<br> <br>";
+        echo json_encode($book2->getPublicacion());
     }
-    public function exaa()
+    public function bien()
     {
         // echo "exaa";
         $book = new Libro("El principito", "Antoine de Saint-Exupery", "ENI");
-        
+
         // $book2 = $book->clonarPHP();
         $book2 = $book->clonar();
         $book2->setTitulo("Tierra de hombres");
-        echo $book->getPublicacion();
+        echo json_encode($book->getPublicacion());
         echo "<br> <br>";
-        echo $book2->getPublicacion();
-    }
-    public function exa()
-    {
-        $data["pattern"] = "My books";
-        $data["script"] = "home/script1.js";
-        $this->getView("home/index1", $data);
+        echo json_encode($book2->getPublicacion());
     }
 }
