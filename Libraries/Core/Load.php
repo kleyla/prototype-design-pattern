@@ -2,10 +2,8 @@
 
 function reload($controller, $method, $params)
 {
-    // echo "Metodo" . $method;
-    $folder = $controller;
     $controller = ucwords($controller);
-    $controllerFile = "Business/" . $folder . "/" . $controller . ".php";
+    $controllerFile = "Business/" . $controller . ".php";
     // echo $controller;
     // echo $controllerFile;
     if (file_exists($controllerFile)) {

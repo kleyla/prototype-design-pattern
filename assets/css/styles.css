@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Dancing Script", cursive;
+}
+body {
+  overflow: hidden;
+}
+:root {
+  --one: #f197c0;
+  --two: #fec9a7;
+  --three: #a5f8ce;
+  --four: #fefd97;
+  --five: #c5ebfe;
+  --six: #b49fdc;
+  --d-one: #f4519a;
+  --dark: #072540;
+}
+p {
+  font-size: 24px;
+}
+.hidden {
+  display: none;
+}
+
+.bg-img-start {
+  background-image: url("./../imgs/books.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  align-items: center;
+}
+.row-center {
+  /* justify-content: center; */
+  align-items: center;
+}
+.col-6 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  min-width: 500px;
+  min-height: 200px;
+  /* height: 300px; */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.card-title {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 16px 0;
+}
+.card-content {
+  text-align: center;
+  padding: 16px 0;
+}
+.w-300 {
+  width: 300px;
+}
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+.btn {
+  padding: 10px 20px;
+  text-align: center;
+  -webkit-appearance: none;
+  background-color: transparent;
+  /* border: 1px solid; */
+  cursor: pointer;
+  /* border-color: transparent; */
+  border: none;
+  font-family: inherit;
+  overflow: hidden;
+  font-size: 1.5rem;
+  border-radius: 25px;
+  outline: none;
+}
+.btn:active {
+  box-shadow: 0 5px #666;
+}
+.btn-primary {
+  background-color: var(--one);
+}
+.btn-primary:hover {
+  background-color: var(--d-one);
+  color: white;
+}
+.book {
+  width: 150px;
+  height: 200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-left: 10px;
+}
+.bg-one {
+  background-color: var(--one);
+}
+.bg-one .book-border {
+  border: 10px solid var(--one);
+  box-shadow: inset 0px 0px 0px 2px white;
+  box-sizing: border-box;
+}
+.bg-two {
+  background-color: var(--two);
+}
+.bg-two .book-border {
+  border: 10px solid var(--two);
+  box-shadow: inset 0px 0px 0px 2px white;
+  box-sizing: border-box;
+}
+.bg-three {
+  background-color: var(--three);
+}
+.bg-three .book-border {
+  border: 10px solid var(--three);
+  box-shadow: inset 0px 0px 0px 2px white;
+  box-sizing: border-box;
+}
+.bg-four {
+  background-color: var(--four);
+}
+.bg-four .book-border {
+  border: 10px solid var(--four);
+  box-shadow: inset 0px 0px 0px 2px white;
+  box-sizing: border-box;
+}
+
+.book-back-border {
+  border: 10px solid var(--dark);
+  box-shadow: inset 0px 0px 0px 2px white;
+  box-sizing: border-box;
+}
+.book-cover {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+}
+.book-cover h4 {
+  font-size: 30px;
+  text-align: center;
+}
+.book-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--dark);
+  color: white;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14px;
+}
+.book-back p {
+  font-size: 20px;
+}
+.book:hover .book-back {
+  opacity: 1;
+}
