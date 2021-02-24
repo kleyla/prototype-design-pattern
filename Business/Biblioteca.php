@@ -1,6 +1,7 @@
 <?php
 require_once("Business/Libro.php");
 require_once("Business/Revista.php");
+require_once("Business/PublicacionPrototype.php");
 
 class Biblioteca extends Business
 {
@@ -12,6 +13,7 @@ class Biblioteca extends Business
         $data["script"] = "home/script.js";
         $this->getView("home/index", $data);
     }
+
     public function operacion()
     {
         $this->publicaciones = [];

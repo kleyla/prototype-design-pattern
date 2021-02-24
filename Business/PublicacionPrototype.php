@@ -4,7 +4,6 @@ abstract class PublicacionPrototype
 {
     public $titulo;
     public $tipo; // Libro o revista
-    // public $autor;
     public $editorial;
 
     public function __construct($titulo, $editorial)
