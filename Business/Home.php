@@ -53,7 +53,7 @@ class Home extends Business
         echo "<br> <br>";
         echo json_encode($book2->getPublicacion());
 
-        $revista = new Revista("Ciencia","EL universo", "Gomez", "Nie 20");
+        $revista = new Revista("Ciencia", "EL universo", "Gomez", "Nie 20");
 
         $revista2 = $revista->clonar();
         $revista2->setAutores("jiji");
@@ -62,5 +62,7 @@ class Home extends Business
         echo json_encode($revista->getPublicacion());
         echo "<br> <br>";
         echo json_encode($revista2->getPublicacion());
+
+        // dep($book->getPublicacion());
     }
 }

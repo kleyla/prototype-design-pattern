@@ -6,7 +6,7 @@
                 <div class="card bg-white animate__animated animate__bounceInRight animate__slow">
                     <h3 class="card-title">Bienvenid@!</h3>
                     <div class="card-content">
-                        <p>Pagina para ver tu coleccion de libros</p>
+                        <p>Pagina para ver la coleccion de libros de Clau</p>
                     </div><br>
                     <button class="btn btn-primary" id="start">Ver libros</button>
                 </div>

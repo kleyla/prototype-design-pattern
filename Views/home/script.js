@@ -1,5 +1,21 @@
+class Tripulante {
+  _color;
+
+  setAtributo(color) {
+    this._color = color;
+  }
+}
 $(document).ready(function () {
   console.log("Ready");
+  // tripulante1 = new Tripulante();
+  // tripulante1.setColor("cian");
+  // // n atributos
+  // tripulante2 = tripulante1;
+  // tripulante1.setColor("rojo");
+
+  // console.log(tripulante1);
+  // console.log(tripulante2);
+
   //   getLeopard();
   getLibros();
 });
