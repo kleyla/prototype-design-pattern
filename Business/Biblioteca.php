@@ -93,7 +93,7 @@ class Biblioteca extends Business
         for ($i = 1; $i < count($datos); $i++) {
             $revistaClonada = $revista->clonar();
             $revistaClonada->setTema($datos[$i]["tema"]);
-            $revistaClonada->setAutores($datos[$i]["autores"]);
+            $revistaClonada->setEditorial($datos[$i]["editorial"]);
             array_push($this->publicaciones, $revistaClonada);
         }
     }
@@ -101,13 +101,13 @@ class Biblioteca extends Business
     {
         return [
             array("titulo" => "Investigacion y Ciencia", "tema" => "El universo", "autores" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 01-20"),
-            array("titulo" => "Investigacion y Ciencia", "tema" => "La Inteligencia artificial", "autores" => "Hidalgo, Bruner, D'Andrea", "editorial" => "ENI 03-20"),
-            array("titulo" => "Investigacion y Ciencia", "tema" => "LA celula", "autores" => "D'Andrea, Mendoza, Soliveres", "editorial" => "ENI 05-20"),
-            array("titulo" => "Investigacion y Ciencia", "tema" => "El coranavirus", "autores" => "Soliveres, Bruner, Garcia", "editorial" => "ENI 06-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "La Inteligencia artificial", "autores" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 03-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "LA celula", "autores" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 05-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "El coranavirus", "autores" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 06-20"),
             array("titulo" => "Investigacion y Ciencia", "tema" => "La vacuna", "autores" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 08-20"),
-            array("titulo" => "Investigacion y Ciencia", "tema" => "Los nuevos soldados", "autores" => "Hidalgo, Bruner, D'Andrea", "editorial" => "ENI 09-20"),
-            array("titulo" => "Investigacion y Ciencia", "tema" => "Marte", "autores" => "D'Andrea, Mendoza, Soliveres", "editorial" => "ENI 10-20"),
-            array("titulo" => "Investigacion y Ciencia", "tema" => "Descubriendo vida", "autores" => "Soliveres, Bruner, Garcia", "editorial" => "ENI 12-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "Los nuevos soldados", "autores" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 09-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "Marte", "autores" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 10-20"),
+            array("titulo" => "Investigacion y Ciencia", "tema" => "Descubriendo vida", "autores" => "Mendoza, Garcia, Bruner", "editorial" => "ENI 12-20"),
         ];
     }
 }
